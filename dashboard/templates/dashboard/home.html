@@ -1,0 +1,68 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container text-center dark">
+    <h1 class="">Daniels' Django Laboratory</h1>
+</div>
+<br><br>
+
+{% comment %}
+
+{% endcomment %}
+<div class="container">
+  <div class="row">
+    {% comment %}
+        The first column is a boostrap accordion showing the goals from the database. 
+    {% endcomment %}
+    <div class="col-4">
+        <h2>Goals</h2>
+        <div class="accordion bg-white text-dark" id="motivationAccordion">            
+        {% for g in goals %} 
+            {% if forloop.counter0 == 0 %}
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading{{ forloop.counter0 }}">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#i{{ forloop.counter0 }}" aria-expanded="true" aria-controls="i{{ forloop.counter0 }}">
+                        {{ g.goal }}
+                    </button>
+                </h3>
+                <div id="i{{ forloop.counter0 }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter0 }}" data-bs-parent="#motivationAccordion">
+                    <div class="accordion-body">
+                        <strong>{{ g.description }}</strong>
+                    </div>
+                </div>      
+            </div>            
+            {% else %}
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading{{ forloop.counter0 }}">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i{{ forloop.counter0 }}" aria-expanded="false" aria-controls="i{{ forloop.counter0 }}">
+                        {{ g.goal }}
+                    </button>
+                </h3>
+                <div id="i{{ forloop.counter0 }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter0 }}" data-bs-parent="#motivationAccordion">
+                    <div class="accordion-body">
+                        <strong>{{ g.description }}</strong>
+                    </div>        
+                </div>  
+            </div>
+            {% endif %}
+        {% endfor %}  
+        </div>        
+    </div>
+    {% comment %}
+    
+    {% endcomment %}
+    <div class="col-8">
+        <h2>Weather</h2>
+        <a class="weatherwidget-io" href="https://forecast7.com/en/40d59n105d08/fort-collins/?unit=us" data-label_1="FORT COLLINS" data-font="Roboto" data-icons="Climacons Animated" data-theme="pure" >FORT COLLINS</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+    </div>
+
+    </div>
+</div>
+<div class="bg-primary">
+    <h2>Fake Content</h2>
+</div>
+
+{% endblock %}

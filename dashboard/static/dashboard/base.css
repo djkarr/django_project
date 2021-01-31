@@ -1,0 +1,54 @@
+:root {
+    --cellSize: 18px;
+    --neonGreen: #31e981;
+}
+
+nav .navbar-nav li a{
+    color: white !important;
+    }
+
+.square {
+    width: var(--cellSize) !important;
+    height: var(--cellSize) !important;
+    background-color: #5c3c92;
+    margin: 1px;
+    max-width: var(--cellSize);
+    max-height: var(--cellSize);
+    overflow: hidden;
+}
+
+.living-cell {
+    background-color: #23b5d3;
+}
+
+.square:hover {
+    background-color: #ff9b42;
+}
+
+.row {
+    margin: 2px;
+    padding-left: 2px;
+}
+
+.gol { 
+    display: inline-block;
+}
+
+#gol-container {
+    display: inline-block;
+}
+
+#gol {
+    flex-wrap: nowrap;
+    width: 100%;
+    display: inline-block;
+}
+
+.accordion-button {
+    color: var(--neonGreen) !important;
+    font-weight: bold;
+}
+
+.neonGreen {
+    color: var(--neonGreen) !important;
+}

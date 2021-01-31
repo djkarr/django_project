@@ -1,0 +1,18 @@
+Q: Why make Conway's game of life and put it on here?
+A: Well first of all I think it's really cool. You can spend hours playing with it. I also wanted to show potential employers that I can 
+use Javascript which is both immensely popular and something I've hardly ever used. 
+
+Q: What challeneges did you encounter while coding this?
+A: Wow, what a good question Daniel. I'd have to say that efficiency was the biggest challenge. In my first iterations of coding this I 
+was using multiple two dimensional arrays. One was for the current generation of cells, another was for the next generation, one was for
+tracking the cell's neighbor counts... there was a lot of looping. I ended up replacing all of those with a single three dimensional array.
+And then I used another 3D array to create a mapping of every cell with it's possible coordinates. Previously I had been calculating that 
+on every loop. then I realized frontloading that work into an initial mapping would help greatly, which it did.
+I also coded this whole website on a Raspberry Pi 400, so there was that limitation as well. (Yes I have better computers, but after working
+at a Windows only job for 1.5 years, I wanted to get back in touch with Linux).
+
+
+Q: Did you learn anything by doing this?
+A: Of course, I don't there's ever a coding project where I don't learn something. That's what makes programming fun. 
+-Variable scope. I guess in ES6, the 'var' keyword is meant to be replaced by const and let. I should refactor my code.
+-Bubbling scope. If you don't use the var keyword, the scope bubbles up to the top before attaching. I utilized this. 
