@@ -8,14 +8,14 @@ const X = 40;
 // Three dimensional array tracking every cell
 // Alive/dead represented by a bool at index cells[i][ii][0]
 // Living neighbor count for each cell at index cells[i][ii][1]
-var cells = [Y];
+let cells = [Y];
 
 // 3D array containing mapping of all possible neighbors of each cell
-var neighborMap = [Y];
+let neighborMap = [Y];
 
-var genCount = 0;
-var gameSpeed = 200;
-var keepAdvancing;
+let genCount = 0;
+const gameSpeed = 200;
+let keepAdvancing;
 // ---------------------------------------------------------------------------
 
 window.onload = function() {
@@ -29,11 +29,11 @@ window.onload = function() {
  * Add a click listener to every cell div.
  */
 function initCells(){
-  for(var i=0; i<Y; i++){
+  for(let i=0; i<Y; i++){
     cells[i] = new Array(X);
     neighborMap[i] = new Array(X);
     $("#gol").append($("<div class='row flex-nowrap' id='row" + i + "'></div>"));
-    for(var ii=0; ii<X; ii++){
+    for(let ii=0; ii<X; ii++){
       neighborMap[i][ii] = getAdjacentCoordinates([i,ii]);
       cells[i][ii] = [false,0];
       $("#row" + i).append($("<div class='square' id='squareR" + i + "C" + ii + "'></div>"));
@@ -52,13 +52,13 @@ function initCells(){
  */
 function getAdjacentCoordinates(id){
   console.log("Starting getAdjacentCoordinates");
-  var y = id[0];
-  var x = id[1];
+  let y = id[0];
+  let x = id[1];
   // All possible 8 adjacent coordinates
-  var coordinates = [[y-1,x-1],[y-1,x],[y-1,x+1],[y,x-1],[y,x+1],[y+1,x-1],[y+1,x],[y+1,x+1]];
-  var c = [];
+  let coordinates = [[y-1,x-1],[y-1,x],[y-1,x+1],[y,x-1],[y,x+1],[y+1,x-1],[y+1,x],[y+1,x+1]];
+  let c = [];
 
-  for(var i=0; i<coordinates.length; i++){
+  for(let i=0; i<coordinates.length; i++){
     c = coordinates[i];
   
     if(c[0] < 0 || c[0] > Y-1 || c[1] < 0 || c[1] > X-1){
@@ -71,7 +71,7 @@ function getAdjacentCoordinates(id){
 }
 
 /**
- * Add click listeners to the control buttons.
+ * Add click listeners to the simulation control buttons.
  */
 function initControls(){
   $("#advance_generation_button").click(function(){
@@ -94,8 +94,32 @@ function initControls(){
   $("#randomize_button").click(function(){
     randomizeStart();
   });
+  $("#preset_button").click(function(){
+    preset();
+  });
 }
 
+/**
+ * Currently creates starting pattern that evolves into the 'pulsar' pattern.
+ * Calls auto advance. 
+ */
+function preset(){
+  clear();
+  let cx = Math.floor(X / 2);
+  let cy = Math.ceil(Y / 3);
+  for(let i=0; i<7; i++){
+    $("#squareR" + (cy+i) + "C" + cx).click();
+    if(i == 3){
+      $("#squareR" + (cy+i) + "C" + (cx-1)).click();
+      $("#squareR" + (cy+i) + "C" + (cx+1)).click();
+    }
+  }
+  $("#auto_advance_button").click();
+}
+
+/**
+ * Stops the auto advance and pauses the simulation.
+ */
 function stop(){
   clearInterval(keepAdvancing);
 }
@@ -106,9 +130,9 @@ function stop(){
 function randomizeStart(){
   console.log("Starting randomize");
   clear();
-  for(var i=0; i<Y; i++){
-    for(var ii=0; ii<X; ii++){
-      var chance = Math.random();
+  for(let i=0; i<Y; i++){
+    for(let ii=0; ii<X; ii++){
+      let chance = Math.random();
       if(chance <= 0.2){
         cells[i][ii][0] = true;
         $("#squareR" + i + "C" + ii).toggleClass("living-cell");
@@ -122,8 +146,8 @@ function randomizeStart(){
  */
 function clear(){
   stop();
-  for(var i=0; i<Y; i++){
-    for(var ii=0; ii<X; ii++){
+  for(let i=0; i<Y; i++){
+    for(let ii=0; ii<X; ii++){
       $("#squareR" + i + "C" + ii).removeClass("living-cell");
       cells[i][ii] = [false, 0];
     }
@@ -144,8 +168,8 @@ function incGenCount(){
  * Decides whether a cell will live, die, or be born. Then updates the display.
  */
 function displayNewGeneration(){
-  for(var i=0; i<Y; i++){
-    for(var ii=0; ii<X; ii++){
+  for(let i=0; i<Y; i++){
+    for(let ii=0; ii<X; ii++){
       if(cells[i][ii][1] == 3 && cells[i][ii][0] == false){
         cells[i][ii][0] = true;
         $("#squareR" + i + "C" + ii).addClass("living-cell");
@@ -162,7 +186,7 @@ function displayNewGeneration(){
  * @param {string} squareID the string id of cell's HTML tag
  */
 function updateGridArray(squareID){
-  var indexes = parseID(squareID);
+  let indexes = parseID(squareID);
   lifeToggleGrid(indexes);
 }
 
@@ -188,10 +212,10 @@ function advanceGeneration(){
  * That count is stored in cells[i][ii][1]
  */
 function updateNeighborCount(){
-  for(var i=0; i<Y; i++){
-    for(var ii=0; ii<X; ii++){
-      var id = [i,ii];
-      var adjacents = neighborMap[i][ii];
+  for(let i=0; i<Y; i++){
+    for(let ii=0; ii<X; ii++){
+      let id = [i,ii];
+      let adjacents = neighborMap[i][ii];
       cells[i][ii][1] = getNeighborCount(adjacents);
     }
   }
@@ -204,10 +228,10 @@ function updateNeighborCount(){
  */
 function getNeighborCount(neighbors){
   console.log("Starting getneighborCount");
-  var count = 0;
+  let count = 0;
   for(i=0; i<neighbors.length; i++){
-    var y = neighbors[i][0];
-    var x = neighbors[i][1];
+    let y = neighbors[i][0];
+    let x = neighbors[i][1];
     if(cells[y][x][0]){
       console.log("cells[y][x][0]): " + y,x + " " + cells[y][x][0]);
       count++;
@@ -223,7 +247,7 @@ function getNeighborCount(neighbors){
  */
 function parseID(squareID){
   // id tags for the cell squares are done in this format: id='squareR{i}C{ii}
-  var strings = squareID.split("C");
+  let strings = squareID.split("C");
   return [parseInt(strings[0].slice(7)), parseInt(strings[1])];
 }
 
