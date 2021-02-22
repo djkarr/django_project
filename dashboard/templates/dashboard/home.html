@@ -2,59 +2,13 @@
 {% block content %}
 {% load static %}
 <div class="container text-center dark">
-    <h1 class="">Daniels' Django Laboratory</h1>
+    <h1 class="">Daniel's Django Laboratory</h1>
 </div>
 <br><br>
 
-<div class="container">
-    {% for b in blogs %}
-        <h3>{{ b.title }}</h3>
-        <img class="text-center" src="{{ b.image.url }}">        
-        <p>{{ b.content }}</p>
-        <br><br>
-    {% endfor %}
+<div class="container text-center">
+    <img class="img-fluid" src="{{ 'media/dashboard/images/stickFigureBinary.jpeg' }}">  
 </div>
-
-{% comment %} <div class="container">
-  <div class="row">
-    <div class="col-4">
-        <h2>Goals</h2>
-        <div class="accordion bg-white text-dark" id="motivationAccordion">            
-        {% for g in goals %} 
-            {% if forloop.counter0 == 0 %}
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="heading{{ forloop.counter0 }}">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#i{{ forloop.counter0 }}" aria-expanded="true" aria-controls="i{{ forloop.counter0 }}">
-                        {{ g.goal }}
-                    </button>
-                </h3>
-                <div id="i{{ forloop.counter0 }}" class="accordion-collapse collapse show" aria-labelledby="heading{{ forloop.counter0 }}" data-bs-parent="#motivationAccordion">
-                    <div class="accordion-body">
-                        <strong>{{ g.description }}</strong>
-                    </div>
-                </div>      
-            </div>            
-            {% else %}
-            <div class="accordion-item">
-                <h3 class="accordion-header" id="heading{{ forloop.counter0 }}">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#i{{ forloop.counter0 }}" aria-expanded="false" aria-controls="i{{ forloop.counter0 }}">
-                        {{ g.goal }}
-                    </button>
-                </h3>
-                <div id="i{{ forloop.counter0 }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter0 }}" data-bs-parent="#motivationAccordion">
-                    <div class="accordion-body">
-                        <strong>{{ g.description }}</strong>
-                    </div>        
-                </div>  
-            </div>
-            {% endif %}
-        {% endfor %}  
-        </div>        
-    </div>
-    
-
-    </div>
-</div> {% endcomment %}
 
 
 {% endblock %}

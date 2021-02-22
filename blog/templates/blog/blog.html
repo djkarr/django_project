@@ -1,0 +1,19 @@
+{% extends 'dashboard/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container text-center dark">
+    <h1 class="">Daniels' Django Laboratory</h1>
+</div>
+<br><br>
+
+<div class="container">
+    {% for b in blogs %}
+        <h3>{{ b.title }}</h3>
+        <img class="text-center" src="{{ b.image.url }}">        
+        <p>{{ b.content }}</p>
+        <br><br>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
