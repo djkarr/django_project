@@ -6,14 +6,17 @@
 </div>
 <br><br>
 
-{% comment %}
-
-{% endcomment %}
 <div class="container">
+    {% for b in blogs %}
+        <h3>{{ b.title }}</h3>
+        <img class="text-center" src="{{ b.image.url }}">        
+        <p>{{ b.content }}</p>
+        <br><br>
+    {% endfor %}
+</div>
+
+{% comment %} <div class="container">
   <div class="row">
-    {% comment %}
-        The first column is a boostrap accordion showing the goals from the database. 
-    {% endcomment %}
     <div class="col-4">
         <h2>Goals</h2>
         <div class="accordion bg-white text-dark" id="motivationAccordion">            
@@ -48,21 +51,10 @@
         {% endfor %}  
         </div>        
     </div>
-    {% comment %}
     
-    {% endcomment %}
-    <div class="col-8">
-        <h2>Weather</h2>
-        <a class="weatherwidget-io" href="https://forecast7.com/en/40d59n105d08/fort-collins/?unit=us" data-label_1="FORT COLLINS" data-font="Roboto" data-icons="Climacons Animated" data-theme="pure" >FORT COLLINS</a>
-        <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
-        </script>
-    </div>
 
     </div>
-</div>
-<div class="bg-primary">
-    <h2>Fake Content</h2>
-</div>
+</div> {% endcomment %}
+
 
 {% endblock %}

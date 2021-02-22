@@ -1,0 +1,15 @@
+-------------------------------------------------------
+Brainstorm
+-------------------------------------------------------
+
+1. Blog about the creation and learning process
+2. Dashboard should have an about me page. Maybe replace the dashboard
+    -Skills, interests, past projects, education
+    -Talk bout past apps, maybe move this to the blog?
+    -Resume (maybe it's own page or just a download)
+    -Essentially a cover letter about how I got here
+    -Photo of me
+3. Maybe past project dropdown
+    -First one could be game of life
+    -Others could be links to play store apps
+    

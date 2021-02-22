@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from dashboard import views
 from game_of_life import views as gol_views
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.dashboard, name="dashboard"),
     path('gameoflife/', gol_views.game_of_life, name="gameoflife"),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
