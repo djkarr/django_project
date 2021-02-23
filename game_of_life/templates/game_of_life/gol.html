@@ -4,106 +4,111 @@
 <div class="container">
     <h1 class="neonGreen">John Conway's Game of Life</h1>
 </div>
+
 <div class="container-fluid" id="gol-container">
     <div class="row">
-    <div id="gol" class="col flex-nowrap w-100"></div>
-    <div class="col-5">
-        <div class="accordion text-white bg-secondary" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header text-info" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    What is Conway's Game of Life?
-                </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway 
-                    in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. 
-                    One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete 
-                    and can simulate a universal constructor or any other Turing machine. 
-                </div>
-                </div>
+        <div class="col">
+            <div id="gol" class="flex-nowrap w-100"></div>
+            <div>
+                <h3 id="genCounter">Generation Count: 0</h3>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header text-info" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    How it works:
-                </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-secondary">Any live cell with fewer than two live neighbors dies, as if by underpopulation.</li>
-                        <li class="list-group-item bg-secondary">Any live cell with two or three live neighbors lives on to the next generation.</li>
-                        <li class="list-group-item bg-secondary">Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
-                        <li class="list-group-item bg-secondary">Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
-                    </ul>
-                </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Why make Conway's Game of Life and put it on here?
-                </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        Well first of all I think it's just really cool and it also has the perk of being interactive, you can spend hours 
-                        playing with it. I also wanted to show potential employers that at this point I have the ability to pick up and use 
-                        new programming languages quite easily. I have minimal Javscript experience, but I was able to pick it up and quickly 
-                        create this with a little help from Google.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    What challeneges did you encounter while coding this?
-                </button>
-                </h2>
-                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        Wow, what a good question. I'd have to say that efficiency was the biggest challenge. In my first iterations 
-                        of coding this I was using multiple two dimensional arrays. One was for the current generation of cells, another was for 
-                        the next generation, one was for tracking the cell's neighbor counts... there was a lot of looping. I ended up replacing 
-                        all of those with a single three dimensional array. Then I used another 3D array to create a mapping of every cell 
-                        with it's possible coordinates. Previously I had been calculating that on every loop. then I realized frontloading that 
-                        work into an initial mapping would help greatly, which it did. I also coded and hosted this whole website on a Raspberry Pi 400,
-                        so there was that limitation as well. (Yes I have better computers, but after workingat a Windows only job for 1.5 
-                        years, I wanted to get back in touch with Linux).
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Ummm... what?
-                </button>
-                </h2>
-                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <p>Try hitting 'Randomize' and then 'Auto Advance'. Or just click 'Preset'. Watch cool things happen.</p>
-                        <p>You can click on cells to toggle them, 'Advance Gen' will move the simulation forward one generation of cells.
-                        It's fully interactive. Play around with the controls, they're there for a reason. Have fun.</p>
-                    </div>
-                </div>
+            <div class="container text-white align-items-center text-center">
+                <button class="btn btn-info center" id="randomize_button">Randomize</button>
+                <button class="btn btn-primary center" id="advance_generation_button">Advance Gen</button>
+                <button class="btn btn-success center" id="auto_advance_button">Auto Advance</button>
+                <button class="btn btn-light center" id="preset_button">Preset</button>
+                <button class="btn btn-danger center" id="stop_button">Stop</button>
+                <button class="btn btn-warning center" id="clear_button">Clear</button>    
             </div>
         </div>
-    </div>
-    </div>
-    <div>
-        <h3 id="genCounter">Generation Count: 0</h3>
+    
+        <div class="col-5">
+            <div class="accordion text-white bg-secondary" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header text-info" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is Conway's Game of Life?
+                    </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway 
+                        in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. 
+                        One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete 
+                        and can simulate a universal constructor or any other Turing machine. 
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header text-info" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        How it works:
+                    </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-secondary">Any live cell with fewer than two live neighbors dies, as if by underpopulation.</li>
+                            <li class="list-group-item bg-secondary">Any live cell with two or three live neighbors lives on to the next generation.</li>
+                            <li class="list-group-item bg-secondary">Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
+                            <li class="list-group-item bg-secondary">Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Why make Conway's Game of Life and put it on here?
+                    </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Well first of all I think it's just really cool and it also has the perk of being interactive, you can spend hours 
+                            playing with it. I also wanted to show potential employers that at this point I have the ability to pick up and use 
+                            new programming languages quite easily. I have minimal Javscript experience, but I was able to pick it up and quickly 
+                            create this with a little help from Google.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What challeneges did you encounter while coding this?
+                    </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Wow, what a good question. I'd have to say that efficiency was the biggest challenge. In my first iterations 
+                            of coding this I was using multiple two dimensional arrays. One was for the current generation of cells, another was for 
+                            the next generation, one was for tracking the cell's neighbor counts... there was a lot of looping. I ended up replacing 
+                            all of those with a single three dimensional array. Then I used another 3D array to create a mapping of every cell 
+                            with it's possible coordinates. Previously I had been calculating that on every loop. then I realized frontloading that 
+                            work into an initial mapping would help greatly, which it did. I also coded and hosted this whole website on a Raspberry Pi 400,
+                            so there was that limitation as well. (Yes I have better computers, but after workingat a Windows only job for 1.5 
+                            years, I wanted to get back in touch with Linux).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Ummm... what?
+                    </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <p>Try hitting 'Randomize' and then 'Auto Advance'. Or just click 'Preset'. Watch cool things happen.</p>
+                            <p>You can click on cells to toggle them, 'Advance Gen' will move the simulation forward one generation of cells.
+                            It's fully interactive. Play around with the controls, they're there for a reason. Have fun.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+     </div>
     </div>
 </div>
-<div class="container text-white align-items-center">
-    <button class="btn btn-info center" id="randomize_button">Randomize</button>
-    <button class="btn btn-primary center" id="advance_generation_button">Advance Gen</button>
-    <button class="btn btn-success center" id="auto_advance_button">Auto Advance</button>
-    <button class="btn btn-light center" id="preset_button">Preset</button>
-    <button class="btn btn-danger center" id="stop_button">Stop</button>
-    <button class="btn btn-warning center" id="clear_button">Clear</button>    
-</div>
+
 
 <script src="{% static 'dashboard/game_of_life.js' %}"></script>
 {% endblock %} 

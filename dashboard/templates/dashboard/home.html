@@ -2,13 +2,32 @@
 {% block content %}
 {% load static %}
 <div class="container text-center dark">
-    <h1 class="">Daniel's Django Laboratory</h1>
+    <h1 class="">Daniel Karr</h1>
+    <a href="{% static 'dashboard/DKResume.pdf' %}" target="_blank"><button id="resume_button" class="btn btn-primary">Resume</button></a>
+    <a href="{% static 'dashboard/coverLetter.pdf' %}" target="_blank"><button id="cover_letter_button" class="btn btn-primary">Cover Letter</button></a>
 </div>
 <br><br>
 
 <div class="container text-center">
     <img class="img-fluid" src="{{ 'media/dashboard/images/stickFigureBinary.jpeg' }}">  
 </div>
+
+<div class="container">
+  <div class="row text-center">
+    <div class="col-sm">
+      <h2>Past Projects</h2>
+      <a href="https://play.google.com/store/apps/developer?id=DK+Mobile" target="_blank"><h5>View my published Android apps here.</h5></a>
+    </div>
+    <div class="col-sm">
+      <h2>Skills</h2>
+    </div>
+    <div class="col-sm">
+      <h2>Education</h2>
+      <h5><strong>BS Applied Computing Technology</strong><br>Concentration in Computing Technology<br>Colorado State University, 2017</h5>
+    </div>
+  </div>
+</div>
+
 
 
 {% endblock %}
