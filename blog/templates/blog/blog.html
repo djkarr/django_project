@@ -2,13 +2,13 @@
 {% block content %}
 {% load static %}
 <div class="container text-center dark">
-    <h1 class="">Daniels' Django Laboratory</h1>
+    <h1 class="">Daniel's Development Blog</h1>
 </div>
 <br><br>
 
-<div class="container">
+<div class="container text-white">
     {% for b in blogs %}
-        <h3>{{ b.title }}</h3>
+        <h3 class="neonGreen">{{ b.title }}</h3>
         <img class="text-center" src="{{ b.image.url }}">        
         <p>{{ b.content }}</p>
         <br><br>

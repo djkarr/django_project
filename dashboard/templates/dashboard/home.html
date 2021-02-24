@@ -1,31 +1,99 @@
 {% extends 'dashboard/base.html' %}
 {% block content %}
 {% load static %}
-<div class="container text-center dark">
-    <h1 class="">Daniel Karr</h1>
+<div class="container text-center neonGreen">
+    <h1 class="neon fw-bold">Daniel Karr</h1>
     <a href="{% static 'dashboard/DKResume.pdf' %}" target="_blank"><button id="resume_button" class="btn btn-primary">Resume</button></a>
     <a href="{% static 'dashboard/coverLetter.pdf' %}" target="_blank"><button id="cover_letter_button" class="btn btn-primary">Cover Letter</button></a>
 </div>
 <br><br>
 
-<div class="container text-center">
-    <img class="img-fluid" src="{{ 'media/dashboard/images/stickFigureBinary.jpeg' }}">  
-</div>
-
-<div class="container">
-  <div class="row text-center">
-    <div class="col-sm">
-      <h2>Past Projects</h2>
-      <a href="https://play.google.com/store/apps/developer?id=DK+Mobile" target="_blank"><h5>View my published Android apps here.</h5></a>
-    </div>
-    <div class="col-sm">
-      <h2>Skills</h2>
-    </div>
-    <div class="col-sm">
-      <h2>Education</h2>
-      <h5><strong>BS Applied Computing Technology</strong><br>Concentration in Computing Technology<br>Colorado State University, 2017</h5>
-    </div>
-  </div>
+<div class="container text-start neonGreen">
+    <div class="row">
+        <div class="col col-9">
+            <div class="row">
+                <div class="col col-4">
+                    <h2>Education</h2>
+                    <h5 class=""><strong>BS Applied Computing Technology:</strong><br>Concentration in Computing Technology<br>Colorado State University, 2017</h5><br>
+                    <h5><strong>CCNA Routing and Switching</strong><br>August, 2019</h5><br>
+                    <br>
+                    <a class="link-info" href="https://play.google.com/store/apps/developer?id=DK+Mobile" target="_blank"><h5>View my published Android apps.</h5></a>   
+                </div>
+                <div class="col col-8">
+                    <img class="img-fluid" src="{{ 'media/dashboard/images/stickFigureBinary.jpeg' }}"> 
+                </div>
+            </div>
+            <div class="row">
+                <br><h2>Skills</h2>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info active"><strong>Programming</strong></li>
+                        <li class="list-group-item list-group-item-info">OOP</li>
+                        <li class="list-group-item list-group-item-info">Java</li>
+                        <li class="list-group-item list-group-item-info">Kotlin</li>
+                        <li class="list-group-item list-group-item-info">Python</li>
+                        <li class="list-group-item list-group-item-info">Django</li>
+                        <li class="list-group-item list-group-item-info">Javascript</li>
+                        <li class="list-group-item list-group-item-info">HTML</li>
+                        <li class="list-group-item list-group-item-info">Bootstrap</li>
+                        <li class="list-group-item list-group-item-info">SQL</li>
+                        {% comment %} <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info active"><strong>Personal</strong></li>
+                        <li class="list-group-item list-group-item-info">Problem Solving</li>
+                        <li class="list-group-item list-group-item-info">Learning</li>
+                        <li class="list-group-item list-group-item-info">Troubleshooting</li>
+                        <li class="list-group-item list-group-item-info">Communication</li>
+                        <li class="list-group-item list-group-item-info">Patience</li>
+                        <li class="list-group-item list-group-item-info">Time Management</li>
+                        <li class="list-group-item list-group-item-info">Detail Oriented</li>
+                        <li class="list-group-item list-group-item-info">Writing</li>
+                        {% comment %} <li class="list-group-item list-group-item-info"></li>
+                        <li class="list-group-item list-group-item-info"></li>
+                        <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                    </ul>
+                </div>
+                <div class="col">
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-info active"><strong>IT</strong></li>
+                        <li class="list-group-item list-group-item-info">Networking</li>
+                        <li class="list-group-item list-group-item-info">Active Directory</li>
+                        <li class="list-group-item list-group-item-info">Windows</li>
+                        <li class="list-group-item list-group-item-info">Linux</li>
+                        <li class="list-group-item list-group-item-info">Powershell</li>
+                        <li class="list-group-item list-group-item-info">Office 365</li>
+                        <li class="list-group-item list-group-item-info">Ticketing Systems</li>
+                        <li class="list-group-item list-group-item-info">Hardware</li>
+                        {% comment %} <li class="list-group-item list-group-item-info"></li>
+                        <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col col-3">
+            <h2>About Me</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere ullamcorper sem eu scelerisque. Nam gravida nisl urna, 
+            vel malesuada massa posuere vel. Sed suscipit, lacus ac consectetur fermentum, enim mauris pharetra lorem, quis pulvinar augue ex vel
+             sapien. Vivamus non ligula bibendum, ultricies lorem eget, rutrum felis. Suspendisse rhoncus porta ante, quis consequat nulla 
+             tincidunt vitae. Donec ornare enim eu elit accumsan, eget vehicula ex condimentum. Maecenas non lobortis libero, ut tempor orci. 
+             Sed placerat lacinia tristique. Phasellus sit amet sodales tortor, in pretium lacus. Maecenas imperdiet lorem mauris. Sed quam 
+             mauris, rutrum in nisi dapibus, condimentum fermentum ligula. Nam rhoncus posuere efficitur. Proin ut leo magna. Sed eleifend sem 
+             non ex scelerisque posuere. Nunc id velit et ante placerat pharetra feugiat at nunc. Sed eu nunc ac dui bibendum egestas. 
+             Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin in felis maximus, consectetur metus nec, eleifend purus. 
+             Phasellus accumsan nulla eu condimentum pellentesque. Ut vel diam sodales, ornare libero nec, volutpat lorem. Ut venenatis, ex 
+             ac imperdiet rhoncus, velit mauris semper lorem, ac fermentum ligula velit quis augue. Curabitur enim velit, lacinia accumsan 
+             sollicitudin nec, tincidunt et magna. Etiam placerat ullamcorper metus vel vestibulum. Nulla fermentum mattis sem, eu laoreet 
+             risus porta vel. Nullam a aliquam lectus. Sed ut tristique libero. Vivamus blandit lacus lectus, eget tincidunt augue dignissim 
+             non. Vestibulum eget eleifend diam. Suspendisse ut nisi elit. Quisque mattis, augue sit amet volutpat mollis, ligula nisi consequat 
+             agna, eget vulputate dui orci sed arcu. Nunc nibh nisi, imperdiet facilisis magna id, maximus semper leo. Donec a egestas arcu. 
+             Cras ac lectus ullamcorper, dapibus risus eu, lobortis metus. Phasellus vitae dui fringilla, viverra justo ac, vestibulum lacus. 
+             Praesent leo nunc, lacinia vel elit non, molestie faucibus est. Quisque vitae efficitur tortor, ut sagittis mi. In non velit ac
+              dolor rhoncus placerat sed sit amet enim. </p>        
+        </div>
+    </div>  
 </div>
 
 
