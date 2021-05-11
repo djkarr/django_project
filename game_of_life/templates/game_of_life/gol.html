@@ -2,14 +2,14 @@
 {% block content %}
 {% load static %}
 <div class="container">
-    <h1 class="neonGreen">John Conway's Game of Life</h1>
+    <h1 class="fw-bold">John Conway's Game of Life</h1>
 </div>
 
-<div class="container-fluid" id="gol-container">
+<div class="container-fluid bg-dark p-2" id="gol-container">
     <div class="row">
         <div class="col">
             <div id="gol" class="flex-nowrap w-100"></div>
-            <div>
+            <div class="text-white">
                 <h3 id="genCounter">Generation Count: 0</h3>
             </div>
             <div class="container text-white align-items-center text-center">
@@ -23,7 +23,7 @@
         </div>
     
         <div class="col-5">
-            <div class="accordion text-white bg-secondary" id="accordionExample">
+            <div class="accordion text-dark bg-light" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header text-info" id="headingOne">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -48,10 +48,10 @@
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-secondary">Any live cell with fewer than two live neighbors dies, as if by underpopulation.</li>
-                            <li class="list-group-item bg-secondary">Any live cell with two or three live neighbors lives on to the next generation.</li>
-                            <li class="list-group-item bg-secondary">Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
-                            <li class="list-group-item bg-secondary">Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
+                            <li class="list-group-item">Any live cell with fewer than two live neighbors dies, as if by underpopulation.</li>
+                            <li class="list-group-item">Any live cell with two or three live neighbors lives on to the next generation.</li>
+                            <li class="list-group-item">Any live cell with more than three live neighbors dies, as if by overpopulation.</li>
+                            <li class="list-group-item">Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.</li>
                         </ul>
                     </div>
                     </div>

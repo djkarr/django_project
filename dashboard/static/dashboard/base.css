@@ -3,9 +3,13 @@
     --neonGreen: #31e981;
 }
 
-nav .navbar-nav li a{
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* nav .navbar-nav li a{
     color: white !important;
-    }
+    } */
 
 .square {
     width: var(--cellSize) !important;
@@ -44,11 +48,20 @@ nav .navbar-nav li a{
     display: inline-block;
 }
 
-.accordion-button {
-    color: var(--neonGreen) !important;
-    font-weight: bold;
-}
-
 .neonGreen {
     color: var(--neonGreen) !important;
 }
+
+/* .accordion-header.text-info {
+    color: white !important;
+    background-color: white !important;
+} */
+
+/* .accordion-button .collapse {
+    background-color: white !important;
+} */
+/* 
+#collapseOne .collapsed {
+    background-color: white !important;
+    color: white !important;
+} */

@@ -2,15 +2,17 @@
 {% block content %}
 {% load static %}
 <div class="container text-center dark">
-    <h1 class="">Daniel's Development Blog</h1>
+    <h1 class="fw-bold">Daniel's Development Blog</h1>
 </div>
 <br><br>
 
 <div class="container text-white">
     {% for b in blogs %}
-        <h3 class="neonGreen">{{ b.title }}</h3>
-        <img class="text-center" src="{{ b.image.url }}">        
-        <p>{{ b.content }}</p>
+        <div class="bg-dark p-2">
+            <h3 class="neonGreen">{{ b.title }}</h3>
+            <img class="text-center m-2" src="{{ b.image.url }}">       
+            <p>{{ b.content }}</p>
+        </div>
         <br><br>
     {% endfor %}
 </div>

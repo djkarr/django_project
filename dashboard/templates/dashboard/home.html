@@ -1,22 +1,22 @@
 {% extends 'dashboard/base.html' %}
 {% block content %}
 {% load static %}
-<div class="container text-center neonGreen">
-    <h1 class="neon fw-bold">Daniel Karr</h1>
-    <a href="{% static 'dashboard/DKResume.pdf' %}" target="_blank"><button id="resume_button" class="btn btn-primary">Resume</button></a>
-    <a href="{% static 'dashboard/coverLetter.pdf' %}" target="_blank"><button id="cover_letter_button" class="btn btn-primary">Cover Letter</button></a>
+<div class="container text-center">
+    <h1 class="fw-bold">Daniel Karr</h1>
+    <a href="{% static 'dashboard/DKResume.pdf' %}" target="_blank"><button id="resume_button" class="btn btn-primary fw-bold">Resume</button></a>
+    <a href="{% static 'dashboard/coverLetter.pdf' %}" target="_blank"><button id="cover_letter_button" class="btn btn-primary fw-bold">Cover Letter</button></a>
 </div>
 <br><br>
 
-<div class="container text-start neonGreen">
+<div class="container text-start bg-dark text-white py-3 mb-3">
     <div class="row">
-        <div class="col col-9">
+        <div class="col col-7">
             <div class="row">
                 <div class="col col-4">
-                    <h2>Education</h2>
+                    <h3 class="neonGreen">Education</h3>
                     <h5 class=""><strong>BS Applied Computing Technology:</strong><br>Concentration in Computing Technology<br>Colorado State University, 2017</h5><br>
                     <h5><strong>CCNA Routing and Switching</strong><br>August, 2019</h5><br>
-                    <br>
+                    <h3 class="neonGreen">Projects</h3>
                     <a class="link-info" href="https://play.google.com/store/apps/developer?id=DK+Mobile" target="_blank"><h5>View my published Android apps.</h5></a>   
                 </div>
                 <div class="col col-8">
@@ -24,58 +24,78 @@
                 </div>
             </div>
             <div class="row">
-                <br><h2>Skills</h2>
+                <br><h3 class="neonGreen">Skills</h3>
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-info active"><strong>Programming</strong></li>
-                        <li class="list-group-item list-group-item-info">OOP</li>
-                        <li class="list-group-item list-group-item-info">Java</li>
-                        <li class="list-group-item list-group-item-info">Kotlin</li>
-                        <li class="list-group-item list-group-item-info">Python</li>
-                        <li class="list-group-item list-group-item-info">Django</li>
-                        <li class="list-group-item list-group-item-info">Javascript</li>
-                        <li class="list-group-item list-group-item-info">HTML</li>
-                        <li class="list-group-item list-group-item-info">Bootstrap</li>
-                        <li class="list-group-item list-group-item-info">SQL</li>
-                        {% comment %} <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                        <li class="list-group-item list-group-item-light text-dark"><strong>Programming</strong></li>
+                        <li class="list-group-item ist-group-item-light text-dark">OOP</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Java</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Kotlin</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Python</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Django</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Javascript</li>
+                        <li class="list-group-item ist-group-item-light text-dark">HTML</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Bootstrap</li>
+                        <li class="list-group-item ist-group-item-light text-dark">SQL</li>
+                        {% comment %} <li class="list-group-item ist-group-item-light text-dark"></li> {% endcomment %}
                     </ul>
                 </div>
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-info active"><strong>Personal</strong></li>
-                        <li class="list-group-item list-group-item-info">Problem Solving</li>
-                        <li class="list-group-item list-group-item-info">Learning</li>
-                        <li class="list-group-item list-group-item-info">Troubleshooting</li>
-                        <li class="list-group-item list-group-item-info">Communication</li>
-                        <li class="list-group-item list-group-item-info">Patience</li>
-                        <li class="list-group-item list-group-item-info">Time Management</li>
-                        <li class="list-group-item list-group-item-info">Detail Oriented</li>
-                        <li class="list-group-item list-group-item-info">Writing</li>
-                        {% comment %} <li class="list-group-item list-group-item-info"></li>
-                        <li class="list-group-item list-group-item-info"></li>
-                        <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                        <li class="list-group-item ist-group-item-light text-dark"><strong>Soft Skills</strong></li>
+                        <li class="list-group-item ist-group-item-light text-dark">Problem Solving</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Learning</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Troubleshooting</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Communication</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Patience</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Time Management</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Attention to Detail</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Writing</li>
+                        {% comment %} <li class="list-group-item ist-group-item-light text-dark"></li>
+                        <li class="list-group-item ist-group-item-light text-dark"></li>
+                        <li class="list-group-item ist-group-item-light text-dark"></li> {% endcomment %}
                     </ul>
                 </div>
                 <div class="col">
                     <ul class="list-group">
-                        <li class="list-group-item list-group-item-info active"><strong>IT</strong></li>
-                        <li class="list-group-item list-group-item-info">Networking</li>
-                        <li class="list-group-item list-group-item-info">Active Directory</li>
-                        <li class="list-group-item list-group-item-info">Windows</li>
-                        <li class="list-group-item list-group-item-info">Linux</li>
-                        <li class="list-group-item list-group-item-info">Powershell</li>
-                        <li class="list-group-item list-group-item-info">Office 365</li>
-                        <li class="list-group-item list-group-item-info">Ticketing Systems</li>
-                        <li class="list-group-item list-group-item-info">Hardware</li>
-                        {% comment %} <li class="list-group-item list-group-item-info"></li>
-                        <li class="list-group-item list-group-item-info"></li> {% endcomment %}
+                        <li class="list-group-item ist-group-item-light text-dark"><strong>IT</strong></li>
+                        <li class="list-group-item ist-group-item-light text-dark">Networking</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Active Directory</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Windows</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Linux</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Powershell</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Office 365</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Ticketing Systems</li>
+                        <li class="list-group-item ist-group-item-light text-dark">Hardware</li>
+                        {% comment %} <li class="list-group-item ist-group-item-light text-dark"></li>
+                        <li class="list-group-item ist-group-item-light text-dark"></li> {% endcomment %}
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="col col-3">
-            <h2>About Me</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere ullamcorper sem eu scelerisque. Nam gravida nisl urna, 
+        <div class="col col-5 my-1 py-0">
+            <img src="{{ 'media/dashboard/images/humor3.jpg' }}" class="img-fluid my-2" alt="...">
+            <img src="{{ 'media/dashboard/images/humor4.jpg' }}" class="img-fluid my-2" alt="...">
+            <img src="{{ 'media/dashboard/images/humor1.jpg' }}" class="img-fluid my-2" alt="...">
+            <img src="{{ 'media/dashboard/images/humor2.png' }}" class="img-fluid my-2" alt="...">
+                {% comment %} <li class="">A second item</li>
+                <li class="">A third item</li>
+                <li class="">A fourth item</li>
+                <li class="">And a fifth one</li> {% endcomment %}
+            
+            {% comment %} <ul class="list-group text-dark">
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul> {% endcomment %}
+        </div>
+    </div>  
+</div>
+
+
+{% comment %} <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere ullamcorper sem eu scelerisque. Nam gravida nisl urna, 
             vel malesuada massa posuere vel. Sed suscipit, lacus ac consectetur fermentum, enim mauris pharetra lorem, quis pulvinar augue ex vel
              sapien. Vivamus non ligula bibendum, ultricies lorem eget, rutrum felis. Suspendisse rhoncus porta ante, quis consequat nulla 
              tincidunt vitae. Donec ornare enim eu elit accumsan, eget vehicula ex condimentum. Maecenas non lobortis libero, ut tempor orci. 
@@ -91,11 +111,5 @@
              agna, eget vulputate dui orci sed arcu. Nunc nibh nisi, imperdiet facilisis magna id, maximus semper leo. Donec a egestas arcu. 
              Cras ac lectus ullamcorper, dapibus risus eu, lobortis metus. Phasellus vitae dui fringilla, viverra justo ac, vestibulum lacus. 
              Praesent leo nunc, lacinia vel elit non, molestie faucibus est. Quisque vitae efficitur tortor, ut sagittis mi. In non velit ac
-              dolor rhoncus placerat sed sit amet enim. </p>        
-        </div>
-    </div>  
-</div>
-
-
-
+              dolor rhoncus placerat sed sit amet enim. </p>    {% endcomment %}
 {% endblock %}
