@@ -1,6 +1,9 @@
 {% extends 'dashboard/base.html' %}
 {% block content %}
 {% load static %}
+<script>
+    document.title = "Game of Life";
+</script>
 <div class="container">
     <h1 class="fw-bold">John Conway's Game of Life</h1>
 </div>
@@ -79,13 +82,13 @@
                     </h2>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Wow, what a good question. I'd have to say that efficiency was the biggest challenge. In my first iterations 
+                            I'd have to say that efficiency was the biggest challenge. In my first iterations 
                             of coding this I was using multiple two dimensional arrays. One was for the current generation of cells, another was for 
                             the next generation, one was for tracking the cell's neighbor counts... there was a lot of looping. I ended up replacing 
                             all of those with a single three dimensional array. Then I used another 3D array to create a mapping of every cell 
                             with it's possible coordinates. Previously I had been calculating that on every loop. then I realized frontloading that 
                             work into an initial mapping would help greatly, which it did. I also coded and hosted this whole website on a Raspberry Pi 400,
-                            so there was that limitation as well. (Yes I have better computers, but after workingat a Windows only job for 1.5 
+                            so there was that limitation as well. (Yes I have better computers, but after working at a Windows only job for almost 2 
                             years, I wanted to get back in touch with Linux).
                         </div>
                     </div>
