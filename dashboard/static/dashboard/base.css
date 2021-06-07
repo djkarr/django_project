@@ -1,5 +1,5 @@
 :root {
-    --cellSize: 18px;
+    --cellSize: 17px;
     --neonGreen: #31e981;
 }
 
@@ -12,12 +12,15 @@ body {
     } */
 
 .square {
+    padding: 0;
     width: var(--cellSize) !important;
     height: var(--cellSize) !important;
     background-color: #5c3c92;
     margin: 1px;
     max-width: var(--cellSize);
     max-height: var(--cellSize);
+    min-width: var(--cellSize);
+    min-height: var(--cellSize);
     overflow: hidden;
 }
 

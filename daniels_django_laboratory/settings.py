@@ -25,7 +25,7 @@ SECRET_KEY = 'v)c%s83(*ro1o3)zdcv6h*e^2p^d(%dw#qx%48wrh(s)d8v4$('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["djkarr.pythonanywhere.com","localhost"]
 
 
 # Application definition
@@ -119,7 +119,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
+STATIC_ROOT = Path.joinpath(BASE_DIR, 'dashboard/static')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')

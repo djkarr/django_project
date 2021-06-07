@@ -1,9 +1,9 @@
 // ---------------------- Global Variables -----------------------------------
 // How many rows
-const Y = 25;
+const Y = 28;
 
 // How many columns
-const X = 40;
+const X = 56;
 
 // Three dimensional array tracking every cell
 // Alive/dead represented by a bool at index cells[i][ii][0]
